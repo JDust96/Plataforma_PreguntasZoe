@@ -1,0 +1,283 @@
+/* --- Reseteo y Estilos Globales --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background-color: #121212;
+    color: #e0e0e0;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* --- Encabezado --- */
+header {
+    padding: 15px 0;
+    border-bottom: 1px solid #333;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+#admin-toggle {
+    color: #a0a0a0;
+    text-decoration: none;
+    font-size: 0.9em;
+    transition: color 0.3s;
+}
+
+#admin-toggle:hover {
+    color: #fff;
+}
+
+/* --- Contenido Principal --- */
+.main-header {
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+.main-header h1 {
+    font-size: 2.5em;
+    margin-bottom: 5px;
+}
+
+.main-header p {
+    color: #a0a0a0;
+}
+
+.actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+/* --- Barra de Búsqueda --- */
+.search-wrapper {
+    position: relative;
+    flex-grow: 1;
+}
+
+.search-wrapper i {
+    position: absolute;
+    top: 50%;
+    left: 15px;
+    transform: translateY(-50%);
+    color: #777;
+}
+
+#search-box {
+    width: 100%;
+    padding: 12px 15px 12px 40px;
+    background-color: #222;
+    border: 1px solid #444;
+    border-radius: 8px;
+    color: #fff;
+    font-size: 1em;
+}
+
+/* --- Botón Principal --- */
+#ask-question-btn {
+    background-color: #f0f0f0;
+    color: #121212;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: background-color 0.3s;
+}
+
+#ask-question-btn:hover {
+    background-color: #fff;
+}
+
+.separator {
+    border: none;
+    height: 1px;
+    background-image: linear-gradient(to right, #444 50%, transparent 50%);
+    background-size: 8px 1px;
+    margin-bottom: 30px;
+}
+
+/* --- Lista de Preguntas --- */
+.question-card {
+    background-color: #1e1e1e;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #333;
+}
+
+.question-card p {
+    margin-bottom: 15px;
+}
+
+.question-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.status-badge {
+    font-size: 0.8em;
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-weight: bold;
+}
+
+.status-badge.resolved {
+    background-color: #28a745; /* Verde */
+    color: #fff;
+}
+
+.resolve-btn {
+    background: none;
+    border: 1px solid #444;
+    color: #a0a0a0;
+    padding: 6px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s;
+    display: none; /* Oculto por defecto */
+}
+
+/* --- Modo Admin --- */
+body.admin-mode .resolve-btn {
+    display: block; /* Visible en modo admin */
+}
+
+.resolve-btn:hover {
+    background-color: #333;
+    color: #fff;
+}
+
+.question-card.resolved .resolve-btn {
+    background-color: #28a745;
+    color: #fff;
+    border-color: #28a745;
+}
+
+#no-questions-message {
+    text-align: center;
+    padding: 50px 0;
+    color: #777;
+}
+
+#no-questions-message h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+/* --- Estilos del Modal --- */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background: #2a2a2a;
+    padding: 30px;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 500px;
+    position: relative;
+}
+
+.close-modal {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 2em;
+    color: #777;
+    cursor: pointer;
+}
+
+#question-form textarea {
+    width: 100%;
+    height: 120px;
+    background-color: #1e1e1e;
+    border: 1px solid #444;
+    border-radius: 8px;
+    color: #fff;
+    padding: 10px;
+    resize: vertical;
+    margin-bottom: 20px;
+}
+
+#question-form button {
+    width: 100%;
+    padding: 12px;
+    background-color: #f0f0f0;
+    color: #121212;
+    border: none;
+    border-radius: 8px;
+    font-size: 1em;
+    font-weight: bold;
+    cursor: pointer;
+}
+/* --- Estilos para los botones de admin --- */
+.admin-buttons {
+    display: flex;
+    gap: 10px; /* Espacio entre botones */
+}
+
+/* Ocultar todos los botones de admin por defecto */
+.admin-buttons button {
+    display: none;
+}
+
+/* Mostrar los botones solo en modo admin */
+body.admin-mode .admin-buttons button {
+    display: inline-flex; /* Usamos inline-flex para alinear el icono y texto */
+    align-items: center;
+    gap: 5px;
+}
+
+/* Estilo específico para el botón de eliminar */
+.delete-btn {
+    background: none;
+    border: 1px solid #8B0000; /* Rojo oscuro */
+    color: #E57373; /* Rojo claro */
+    padding: 6px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.delete-btn:hover {
+    background-color: #8B0000; /* Rojo oscuro */
+    color: #fff;
+}
