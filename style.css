@@ -101,7 +101,7 @@ header .container {
 #ask-question-btn {
     /* --- Botón Principal --- */
 #ask-question-btn {
-    background-color: #FF8C00; /* Naranja más vivo */
+    background-color: #fc6a09/* Naranja más vivo */;
     color: #fff; /* Texto blanco para contrastar */
     border: none;
     padding: 12px 20px;
@@ -115,7 +115,7 @@ header .container {
 }
 
 #ask-question-btn:hover {
-    background-color: #FFA500; /* Un naranja ligeramente más claro al pasar el ratón */
+    background-color: #fc6a09; /* Un naranja ligeramente más claro al pasar el ratón */
 }
 }
 
