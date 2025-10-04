@@ -12,13 +12,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const body = document.body;
 
     // --- ESTADO INICIAL DE LA APLICACIÓN ---
-    let isAdmin = false;
-    let questions = [
-        // Datos de ejemplo para empezar
-        { id: 1, text: '¿Cuál es el deadline para el proyecto del primer trimestre?', resolved: true },
-        { id: 2, text: '¿Habrá reunión de equipo esta semana?', resolved: false },
-        { id: 3, text: '¿Podemos tener un día de trabajo remoto adicional al mes?', resolved: false },
-    ];
+    // --- ESTADO INICIAL DE LA APLICACIÓN ---
+let isAdmin = false;
+let questions = []; // El array ahora está vacío
 
     // --- FUNCIONES ---
 
