@@ -97,23 +97,29 @@ header .container {
     font-size: 1em;
 }
 
-/* --- Botón Principal --- */
+/* --- Botón Principal (Versión Corregida y Completa) --- */
 #ask-question-btn {
-    background-color: #f0f0f0;
-    color: #121212;
-    border: none;
-    padding: 12px 20px;
-    border-radius: 8px;
-    font-weight: bold;
-    cursor: pointer;
+    background-color: #FF8C00; /* El color naranja que querías */
+    color: #fff;               /* El texto blanco */
+    
+    /* --- Propiedades de tamaño y apariencia --- */
+    padding: 12px 20px;       /* Relleno interior (lo más importante) */
+    font-weight: bold;        /* Texto en negrita */
+    border-radius: 8px;       /* Bordes redondeados */
+    border: none;             /* Sin borde */
+    
+    /* --- Propiedades de alineación y cursor --- */
     display: flex;
     align-items: center;
     gap: 8px;
+    cursor: pointer;
+    
+    /* --- Efectos --- */
     transition: background-color 0.3s;
 }
 
 #ask-question-btn:hover {
-    background-color: #fff;
+    background-color: #FFA500; /* Naranja más claro al pasar el ratón */
 }
 
 .separator {
